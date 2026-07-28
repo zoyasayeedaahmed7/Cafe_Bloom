@@ -5,9 +5,25 @@ import GlassCard from "../components/ui/GlassCard";
 import { fadeIn, staggerContainer } from "../utils/animations";
 import { Link } from "react-router-dom";
 
+// Add-on sauces offered alongside the order.
+const sauces = [
+  {
+    id: "sauce-chilli",
+    name: "Smoked Chilli Chutney",
+    price: 120,
+    image: "https://images.unsplash.com/photo-1575919159574-e49dc9e1228f?auto=format&fit=crop&q=70&w=600",
+  },
+  {
+    id: "sauce-aioli",
+    name: "Truffle Garlic Aioli",
+    price: 150,
+    image: "https://images.unsplash.com/photo-1758700835219-0422fdc4dd54?auto=format&fit=crop&q=70&w=600",
+  },
+];
+
 const Order = () => {
   // Mock Cart Data (In a real app, this comes from Redux/Context)
-  const cartItems = []; 
+  const cartItems = [];
   const isEmpty = cartItems.length === 0;
 
   const steps = [
@@ -92,13 +108,18 @@ const Order = () => {
             <div className="mt-12 p-8 rounded-3xl border border-white/5 bg-white/[0.02]">
                 <h4 className="text-white font-serif mb-6 text-lg">Chef's Recommendations</h4>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    {[1, 2].map((_, i) => (
-                        <div key={i} className="group cursor-pointer">
+                    {sauces.map((sauce) => (
+                        <div key={sauce.id} className="group cursor-pointer">
                             <div className="aspect-square bg-white/5 rounded-2xl mb-3 overflow-hidden border border-white/5">
-                                <div className="w-full h-full bg-gradient-to-br from-primary/20 to-transparent group-hover:scale-110 transition-transform duration-500" />
+                                <img
+                                    src={sauce.image}
+                                    alt={sauce.name}
+                                    loading="lazy"
+                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                />
                             </div>
-                            <p className="text-xs text-white/60 font-bold group-hover:text-primary transition-colors">Special Sauce</p>
-                            <p className="text-[10px] text-primary">{formatPrice(120)}</p>
+                            <p className="text-xs text-white/60 font-bold group-hover:text-primary transition-colors">{sauce.name}</p>
+                            <p className="text-[10px] text-primary">{formatPrice(sauce.price)}</p>
                         </div>
                     ))}
                 </div>
