@@ -1,29 +1,20 @@
 import { Sun, Moon } from "lucide-react";
-import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { useLocalStorage } from "../../hooks/useLocalStorage";
+import { useTheme } from "../../context/ThemeContext";
 
 const ThemeToggle = () => {
-  const [theme, setTheme] = useLocalStorage("theme", "dark");
-  const isDay = theme === "light";
-
-  useEffect(() => {
-    // The stylesheet keys day mode off `.light` on <html>. This previously
-    // toggled a `dark` class instead, which no CSS rule matched — so the button
-    // saved a preference that never changed a single pixel.
-    document.documentElement.classList.toggle("light", isDay);
-  }, [isDay]);
+  const { isDay, toggleTheme } = useTheme();
 
   return (
     <button
       type="button"
-      onClick={() => setTheme(isDay ? "dark" : "light")}
+      onClick={toggleTheme}
       aria-label={isDay ? "Switch to night mode" : "Switch to day mode"}
       aria-pressed={isDay}
       title={isDay ? "Night mode" : "Day mode"}
       className="fixed top-4 right-5 z-[60] flex items-center gap-1 p-1 rounded-full
                  bg-bg-soft/80 backdrop-blur-xl border border-primary/30
-                 shadow-lg shadow-black/30 hover:border-primary
+                 shadow-lg shadow-black/20 hover:border-primary
                  transition-colors duration-300"
     >
       {[

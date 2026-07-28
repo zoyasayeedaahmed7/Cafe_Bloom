@@ -7,6 +7,7 @@ import {
 import { FaInstagram, FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { cn } from "../../utils/utils"; // Assuming you have a cn utility
+import { scrollToTopSmooth } from "../../utils/smoothScroll";
 
 const Footer = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -200,7 +201,7 @@ const Footer = () => {
             <motion.button 
               whileHover={{ y: -5 }}
               whileTap={{ scale: 0.9 }}
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              onClick={scrollToTopSmooth}
               className="flex items-center gap-3 px-6 py-3 bg-white/5 hover:bg-white/10 rounded-full border border-white/10 text-white transition-all group"
             >
               <span className="text-[10px] font-black uppercase tracking-widest">Back to Top</span>

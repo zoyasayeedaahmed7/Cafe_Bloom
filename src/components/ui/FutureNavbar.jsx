@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { twMerge } from "tailwind-merge";
 import { setupSvgRenderer } from "@left4code/svg-renderer";
 import { cva } from "class-variance-authority";
+import { useTheme } from "../../context/ThemeContext";
 
 /** 🔥 SVG FRAME COMPONENT **/
 const Frame = ({
@@ -37,16 +38,25 @@ const Frame = ({
 };
 
 /** 🎨 BUTTON VARIANTS & COLORS **/
+// Fills are SVG attributes and cannot resolve CSS variables, so each theme
+// needs literals. Day mode is far weaker — night mode's 22% burgundy reads as
+// a solid pink slab on a pale page. `text` can stay a variable because it is
+// applied as an inline style, where var() does resolve.
 const COLORS = {
-  default: {
-    stroke1: "#a62648", // Gold for Cafe Bloom
+  night: {
+    stroke1: "#a62648",
     fill1: "rgba(166, 38, 72, 0.22)",
     stroke2: "#a62648",
     fill2: "rgba(166, 38, 72, 0.1)",
-    // Theme token, not a literal — a hardcoded #ffffff left the Enquiry label
-    // invisible against day mode's pale background.
     text: "var(--color-text-base)",
-  }
+  },
+  day: {
+    stroke1: "rgba(138, 27, 58, 0.45)",
+    fill1: "rgba(166, 38, 72, 0.06)",
+    stroke2: "rgba(138, 27, 58, 0.35)",
+    fill2: "rgba(166, 38, 72, 0.03)",
+    text: "var(--color-text-base)",
+  },
 };
 
 const buttonVariants = cva(
@@ -76,7 +86,8 @@ const FutureButton = ({
   textColor,
   ...props
 }) => {
-  const colors = COLORS.default;
+  const { isDay } = useTheme();
+  const colors = isDay ? COLORS.day : COLORS.night;
 
   return (
     <button

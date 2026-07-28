@@ -61,7 +61,7 @@ export const menuData = [
   { id: 309, name: "Choco Chip Cookie", category: "Sweets", price: 150, image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hvY28lMjBjaGlwJTIwY29va2llfGVufDB8fDB8fHww", description: "Large warm cookie with dark chocolate chips.", tags: ["Snack"], calories: "280 kcal" },
   {id: 310, name: "Raspberry Mille-Feuille", category: "Sweets", price: 500, image: "https://images.unsplash.com/photo-1621659121450-dc03d85f1b49?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFzcGJlcnJ5JTIwbWlsbGV8ZW58MHx8MHx8fDA%3D", description: "Layers of puff pastry with raspberry cream.", tags: ["Elegant"], calories: "450 kcal" },
   {id: 311, name: "Chocolate Éclair", category: "Sweets", price: 400, image: "https://images.unsplash.com/photo-1613992281296-b48e3d37876b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2hvY2xhdGUlMjBlY2xhaXJ8ZW58MHx8MHx8fDA%3D", description: "Choux pastry filled with chocolate cream.", tags: ["French"], calories: "400 kcal" },
-  {id: 312, name: "Pistachio Gelato", category: "Sweets", price: 350, image: "", description: "Creamy Italian pistachio ice cream.", tags: ["Cold"], calories: "250 kcal" },
+  {id: 312, name: "Pistachio Gelato", category: "Sweets", price: 350, image: "https://images.unsplash.com/photo-1630859885680-8f780e2e65a9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGlzdGFjaGlvJTIwZ2VsYXRvfGVufDB8fDB8fHww", description: "Creamy Italian pistachio ice cream.", tags: ["Cold"], calories: "250 kcal" },
   
 
   // ☕ DRINKS (43-52)

@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { Frame, FutureButton } from "../ui/FutureNavbar";
 import { getRestaurantStatus } from "../../utils/helpers";
 import { useCart } from "../../context/CartContext";
+import { useTheme } from "../../context/ThemeContext";
 
 export const MobileMenuContext = createContext({
   showMenu: false,
@@ -14,12 +15,17 @@ const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const { status } = getRestaurantStatus();
   const { count } = useCart();
-  
-  const primaryStroke = "#a62648"; 
-  const primaryFill = "rgba(166, 38, 72, 0.1)";
+  const { isDay } = useTheme();
+
+  // The frame is drawn as SVG attributes, which cannot resolve CSS variables,
+  // so the two themes need literal values. Day mode uses a far weaker fill —
+  // the night-mode 10% burgundy reads as a solid pink slab on a pale page.
+  const primaryStroke = isDay ? "rgba(138, 27, 58, 0.45)" : "#a62648";
+  const primaryFill = isDay ? "rgba(166, 38, 72, 0.035)" : "rgba(166, 38, 72, 0.1)";
+  const accentFill = isDay ? "rgba(166, 38, 72, 0.02)" : "rgba(166,38,72,0.05)";
 
   const openWhatsApp = () => {
-    const phoneNumber = "919620996689";
+    const phoneNumber = "919380428285";
     const msg = "Hello Cafe Bloom! I have an enquiry regarding my visit.";
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(msg)}`, "_blank");
   };
@@ -43,7 +49,7 @@ const Navbar = () => {
               paths={[
                 {
                   show: true,
-                  style: { strokeWidth: "1", stroke: primaryStroke, fill: "rgba(166,38,72,0.05)" },
+                  style: { strokeWidth: "1", stroke: primaryStroke, fill: accentFill },
                   path: [["M","0","0"],["L","100% - 6","0"],["L","100% - 11","100% - 64"],["L","100% + 0","0% + 29"],["L","0","11"],["L","0","0"]]
                 }
               ]}
@@ -65,7 +71,7 @@ const Navbar = () => {
             />
             
             <div className="flex items-center mt-3 relative z-20">
-              <NavLink to="/" className="me-10 font-serif font-black text-xl tracking-tighter text-white">
+              <NavLink to="/" className="me-10 font-serif font-black text-xl tracking-tighter text-text-base">
                 CAFE<span className="text-primary-light italic">BLOOM</span>
               </NavLink>
 
@@ -74,7 +80,7 @@ const Navbar = () => {
                   <NavLink
                     key={link.path}
                     to={link.path}
-                    className={({ isActive }) => `relative ${isActive ? "text-primary-light" : "text-white/50 hover:text-white transition-colors"}`}
+                    className={({ isActive }) => `relative ${isActive ? "text-primary-light" : "text-text-muted hover:text-text-base transition-colors"}`}
                   >
                     {link.name}
                     {/* Live cart count, so an added item is visible immediately */}
@@ -103,7 +109,7 @@ const Navbar = () => {
               paths={[
                 {
                   show: true,
-                  style: { strokeWidth: "1", stroke: primaryStroke, fill: "rgba(166,38,72,0.05)" },
+                  style: { strokeWidth: "1", stroke: primaryStroke, fill: accentFill },
                   path: [["M","19","0"],["L","100% - 5","0"],["L","100% + 0","0% + 7"],["L","100% - 36","100% - 20"],["L","0","100% - 20"],["L","25","8.9"],["L","19","1"]]
                 }
               ]}

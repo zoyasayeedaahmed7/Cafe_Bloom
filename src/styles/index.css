@@ -69,6 +69,35 @@
     background-image: radial-gradient(circle at 50% -20%, rgba(166, 38, 72, 0.08), transparent 80%);
   }
 
+  /* --- LENIS SMOOTH SCROLL ---
+     Required by @studio-freight/lenis and previously never included, which is
+     why scrolling stuttered: the browser's own smooth-scroll kept competing
+     with Lenis's rAF loop. Lenis stamps these classes on <html> itself. */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  /* Opt an inner scroll container out of Lenis with data-lenis-prevent. */
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  /* Respect the OS setting — Lenis is not initialised in that case either. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
   /* Smooth custom scrollbar */
   ::-webkit-scrollbar {
     width: 6px;

@@ -12,6 +12,12 @@ dist
 dist-ssr
 *.local
 
+# Local secrets — the contact-form access key lives here.
+# .env.example is committed as the template; .env itself must not be.
+.env
+.env.*
+!.env.example
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

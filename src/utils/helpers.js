@@ -42,9 +42,7 @@ export const getTodaysSpecial = () => {
 };
 
 // 4. Smooth Scroll Utility
-export const scrollToSection = (id) => {
-  const element = document.getElementById(id);
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-};
+// Delegates to Lenis. Native scrollIntoView({behavior:'smooth'}) does nothing
+// useful while Lenis is running — Lenis sets scroll-behavior:auto and drives
+// the scroll position itself.
+export { scrollToElement as scrollToSection } from './smoothScroll';

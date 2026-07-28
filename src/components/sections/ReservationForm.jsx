@@ -36,7 +36,7 @@ const ReservationForm = () => {
   const lottieData = bookingAnimation?.default || bookingAnimation;
 
   const onSubmit = (data) => {
-    const phoneNumber = "919620996689";
+    const phoneNumber = "919380428285";
 
     const message = `*New Table Reservation* 🍽️%0A%0A
 *Name:* ${data.name}%0A

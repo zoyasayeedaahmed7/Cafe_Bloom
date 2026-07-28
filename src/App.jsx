@@ -5,9 +5,10 @@ import { AnimatePresence } from "framer-motion";
 
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
-import CustomCursor from "./components/common/CustomCursor";
 import ThemeToggle from "./components/common/ThemeToggle";
 import { CartProvider } from "./context/CartContext";
+import { ThemeProvider } from "./context/ThemeContext";
+import { scrollToTopInstant } from "./utils/smoothScroll";
 
 import Home from "./pages/Home";
 import Menu from "./pages/Menu";
@@ -22,7 +23,10 @@ import Accessibility from "./pages/Accessibility";
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // Must go through Lenis. A raw window.scrollTo(0, 0) sets the native
+    // scroll position while Lenis is still animating toward its own target,
+    // and Lenis immediately drags the page back down.
+    scrollToTopInstant();
   }, [pathname]);
   return null;
 };
@@ -30,34 +34,35 @@ const ScrollToTop = () => {
 function App() {
   return (
     <Router>
-      <CartProvider>
-        <div className="bg-bg-dark min-h-screen">
+      <ThemeProvider>
+        <CartProvider>
+          <div className="bg-bg-main min-h-screen">
 
-          <CustomCursor />
-          <ThemeToggle />
+            <ThemeToggle />
 
-          <Toaster position="bottom-right" />
+            <Toaster position="bottom-right" />
 
-          <Navbar />
-          <ScrollToTop />
+            <Navbar />
+            <ScrollToTop />
 
-          <AnimatePresence mode="wait">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/menu" element={<Menu />} />
-              <Route path="/reservation" element={<Reservation />} />
-              <Route path="/order" element={<Order />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/privacy" element={<Privacy />} />
-              <Route path="/terms" element={<Terms />} />
-              <Route path="/accessibility" element={<Accessibility />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </AnimatePresence>
+            <AnimatePresence mode="wait">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/menu" element={<Menu />} />
+                <Route path="/reservation" element={<Reservation />} />
+                <Route path="/order" element={<Order />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/privacy" element={<Privacy />} />
+                <Route path="/terms" element={<Terms />} />
+                <Route path="/accessibility" element={<Accessibility />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </AnimatePresence>
 
-          <Footer />
-        </div>
-      </CartProvider>
+            <Footer />
+          </div>
+        </CartProvider>
+      </ThemeProvider>
     </Router>
   );
 }
