@@ -22,7 +22,7 @@ import bookingAnimation from "../../assets/animations/booking.json";
 // browsers that ignore it.
 const selectClasses =
   "w-full pl-10 pr-10 py-3 rounded-xl bg-white/10 text-white border border-white/10 " +
-  "outline-none focus:border-indigo-400 [color-scheme:dark] cursor-pointer";
+  "outline-none focus:border-primary-light [color-scheme:dark] cursor-pointer";
 const optionClasses = "bg-slate-900 text-white";
 
 const ReservationForm = () => {
@@ -51,9 +51,9 @@ const ReservationForm = () => {
 
     toast.success("Opening WhatsApp...", {
       style: {
-        background: "#020617",
-        color: "#6366f1",
-        border: "1px solid rgba(99,102,241,0.3)",
+        background: "#0a0507",
+        color: "#a81d40",
+        border: "1px solid rgba(168, 29, 64,0.3)",
         borderRadius: "12px",
       },
     });
@@ -65,11 +65,11 @@ const ReservationForm = () => {
   };
 
   return (
-    <section className="py-28 bg-[#020617] relative overflow-hidden">
+    <section className="py-28 bg-[#0a0507] relative overflow-hidden">
       <motion.div
         animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
         transition={{ duration: 8, repeat: Infinity }}
-        className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-indigo-500/20 blur-[120px] rounded-full"
+        className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/20 blur-[120px] rounded-full"
       />
 
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
@@ -80,12 +80,12 @@ const ReservationForm = () => {
             whileInView={{ opacity: 1, x: 0 }}
             className="lg:w-2/5 space-y-6"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-bold uppercase">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary-light text-xs font-bold uppercase">
               <Sparkles size={14} /> Instant Booking
             </div>
 
             <h2 className="text-5xl md:text-6xl text-white font-bold leading-tight">
-              Book Your <span className="text-indigo-400">Table</span>
+              Book Your <span className="text-primary-light">Table</span>
             </h2>
 
             <p className="text-slate-400">
@@ -137,7 +137,7 @@ const ReservationForm = () => {
                         {...register(field.id, {
                           required: `${field.label} is required`,
                         })}
-                        className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/10 text-white outline-none border border-white/10 focus:border-indigo-400"
+                        className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/10 text-white outline-none border border-white/10 focus:border-primary-light"
                       />
                     </div>
 
@@ -188,7 +188,7 @@ const ReservationForm = () => {
                 <motion.button
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
-                  className="md:col-span-2 bg-indigo-500 py-4 rounded-xl font-bold text-white flex justify-center items-center gap-2"
+                  className="md:col-span-2 bg-primary py-4 rounded-xl font-bold text-white flex justify-center items-center gap-2"
                 >
                   Confirm Booking <Send size={16} />
                 </motion.button>

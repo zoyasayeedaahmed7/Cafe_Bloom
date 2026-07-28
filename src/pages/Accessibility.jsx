@@ -19,7 +19,7 @@ const Accessibility = () => {
           <div className="glass-card p-8">
             <Globe className="text-primary mb-4" size={32} />
             <h3 className="text-xl text-white font-serif mb-2">Physical Venue</h3>
-            <p className="text-slate-400 text-sm">Our Noida location features ramp access, braille menus upon request, and adjustable lighting zones for guests with sensory sensitivities.</p>
+            <p className="text-slate-400 text-sm">Our Gottigere location features ramp access, braille menus upon request, and adjustable lighting zones for guests with sensory sensitivities.</p>
           </div>
         </div>
 

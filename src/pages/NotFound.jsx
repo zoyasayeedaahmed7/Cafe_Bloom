@@ -32,7 +32,7 @@ const NotFound = () => {
           className="text-center"
         >
           <h2 className="text-4xl md:text-6xl text-white font-serif mb-6">
-            Lost in the <span className="text-indigo-400 italic">Aroma?</span>
+            Lost in the <span className="text-primary-light italic">Aroma?</span>
           </h2>
           <p className="text-slate-400 max-w-md mx-auto mb-10 text-lg">
             The secret recipe for this page has vanished. Let's get you back to the main menu.
@@ -42,7 +42,7 @@ const NotFound = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="group flex items-center gap-3 bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-xs transition-all shadow-2xl shadow-indigo-500/20"
+              className="group flex items-center gap-3 bg-primary hover:bg-primary text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-xs transition-all shadow-2xl shadow-primary/20"
             >
               <HomeIcon size={16} />
               Back to Home
@@ -53,7 +53,7 @@ const NotFound = () => {
       </div>
 
       {/* Decorative Bottom Gradient */}
-      <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-indigo-500/10 to-transparent z-20 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-primary/10 to-transparent z-20 pointer-events-none" />
     </div>
   );
 };

@@ -15,8 +15,8 @@ const Navbar = () => {
   const { status } = getRestaurantStatus();
   const { count } = useCart();
   
-  const primaryStroke = "#fbbf24"; 
-  const primaryFill = "rgba(251, 191, 36, 0.1)";
+  const primaryStroke = "#a81d40"; 
+  const primaryFill = "rgba(168, 29, 64, 0.1)";
 
   const openWhatsApp = () => {
     const phoneNumber = "919620996689";
@@ -43,7 +43,7 @@ const Navbar = () => {
               paths={[
                 {
                   show: true,
-                  style: { strokeWidth: "1", stroke: primaryStroke, fill: "rgba(251,191,36,0.05)" },
+                  style: { strokeWidth: "1", stroke: primaryStroke, fill: "rgba(168, 29, 64,0.05)" },
                   path: [["M","0","0"],["L","100% - 6","0"],["L","100% - 11","100% - 64"],["L","100% + 0","0% + 29"],["L","0","11"],["L","0","0"]]
                 }
               ]}
@@ -54,7 +54,7 @@ const Navbar = () => {
           <div className="flex-none h-full px-12 relative w-full lg:w-auto min-w-[580px]">
             <Frame
               enableBackdropBlur
-              className="drop-shadow-[0_0_10px_rgba(251,191,36,0.1)]"
+              className="drop-shadow-[0_0_10px_rgba(168, 29, 64,0.1)]"
               paths={[
                 {
                   show: true,
@@ -66,7 +66,7 @@ const Navbar = () => {
             
             <div className="flex items-center mt-3 relative z-20">
               <NavLink to="/" className="me-10 font-serif font-black text-xl tracking-tighter text-white">
-                CAFE<span className="text-yellow-500 italic">BLOOM</span>
+                CAFE<span className="text-primary-light italic">BLOOM</span>
               </NavLink>
 
               <div className="hidden lg:flex gap-6 font-bold text-[10px] uppercase tracking-[0.2em]">
@@ -74,12 +74,12 @@ const Navbar = () => {
                   <NavLink
                     key={link.path}
                     to={link.path}
-                    className={({ isActive }) => `relative ${isActive ? "text-yellow-500" : "text-white/50 hover:text-white transition-colors"}`}
+                    className={({ isActive }) => `relative ${isActive ? "text-primary-light" : "text-white/50 hover:text-white transition-colors"}`}
                   >
                     {link.name}
                     {/* Live cart count, so an added item is visible immediately */}
                     {link.path === "/order" && count > 0 && (
-                      <span className="absolute -top-2 -right-4 min-w-[16px] h-4 px-1 rounded-full bg-yellow-500 text-black text-[9px] font-black flex items-center justify-center tabular-nums">
+                      <span className="absolute -top-2 -right-4 min-w-[16px] h-4 px-1 rounded-full bg-primary text-white text-[9px] font-black flex items-center justify-center tabular-nums">
                         {count > 99 ? "99+" : count}
                       </span>
                     )}
@@ -88,7 +88,7 @@ const Navbar = () => {
               </div>
 
               <div className="ms-6 hidden xl:block">
-                <span className="text-[8px] font-black px-2 py-0.5 rounded border border-yellow-500/20 text-yellow-500 animate-pulse uppercase">
+                <span className="text-[8px] font-black px-2 py-0.5 rounded border border-primary/20 text-primary-light animate-pulse uppercase">
                   {status}
                 </span>
               </div>
@@ -96,13 +96,14 @@ const Navbar = () => {
           </div>
 
           {/* Right Frame (Enquiry Button) */}
-          <div className="w-full relative -ml-[25px] lg:flex justify-end pe-10 hidden">
+          {/* pe-28 leaves room for the fixed day/night toggle in the corner */}
+          <div className="w-full relative -ml-[25px] lg:flex justify-end pe-28 hidden">
             <Frame
               enableBackdropBlur
               paths={[
                 {
                   show: true,
-                  style: { strokeWidth: "1", stroke: primaryStroke, fill: "rgba(251,191,36,0.05)" },
+                  style: { strokeWidth: "1", stroke: primaryStroke, fill: "rgba(168, 29, 64,0.05)" },
                   path: [["M","19","0"],["L","100% - 5","0"],["L","100% + 0","0% + 7"],["L","100% - 36","100% - 20"],["L","0","100% - 20"],["L","25","8.9"],["L","19","1"]]
                 }
               ]}
@@ -114,7 +115,7 @@ const Navbar = () => {
                 className="font-black px-6 py-2 text-[10px] uppercase tracking-[0.2em] hover:brightness-125"
               >
                 <div className="flex items-center gap-2">
-                  <MessageCircle size={14} className="text-yellow-500" />
+                  <MessageCircle size={14} className="text-primary-light" />
                   Enquiry
                 </div>
               </FutureButton>

@@ -8,7 +8,7 @@ const Reservation = () => {
   const y2 = useTransform(scrollY, [0, 500], [0, -150]);
 
   const contactInfo = [
-    { icon: <MapPin size={24} />, title: "Visit Us", detail: "Sector 62, Noida", sub: "Gautam Buddha Nagar, UP" },
+    { icon: <MapPin size={24} />, title: "Visit Us", detail: "Gottigere, Bangalore", sub: "Bangalore South, Karnataka" },
     { icon: <Phone size={24} />, title: "Call Us", detail: "+91 96209 96689", sub: "Mon - Sun, 10am - 11pm" },
     { icon: <Mail size={24} />, title: "Email Us", detail: "info@codeinnovativetechnologies.com", sub: "Response within 24hrs" }
   ];
@@ -20,9 +20,9 @@ const Reservation = () => {
   ];
 
   return (
-    <div className="pt-40 pb-24 bg-[#020617] relative overflow-hidden">
+    <div className="pt-40 pb-24 bg-[#0a0507] relative overflow-hidden">
       {/* Background Decorative Elements */}
-      <motion.div style={{ y: y1 }} className="absolute top-20 right-[-10%] w-[500px] h-[500px] bg-indigo-500/10 blur-[120px] rounded-full" />
+      <motion.div style={{ y: y1 }} className="absolute top-20 right-[-10%] w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full" />
       <motion.div style={{ y: y2 }} className="absolute bottom-40 left-[-5%] w-[400px] h-[400px] bg-primary/10 blur-[100px] rounded-full" />
 
       {/* 1. Hero Header Section */}
@@ -40,7 +40,7 @@ const Reservation = () => {
             Exclusive Dining
           </motion.span>
           <h1 className="text-6xl md:text-8xl font-serif text-white tracking-tight">
-            The <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-primary via-indigo-300 to-white/80">Experience</span>
+            The <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-light to-white/80">Experience</span>
           </h1>
           <p className="text-slate-400 max-w-xl mx-auto text-lg font-light leading-relaxed">
             From intimate dinners to grand celebrations, every seat at Cafe Bloom is a journey through flavor and elegance.

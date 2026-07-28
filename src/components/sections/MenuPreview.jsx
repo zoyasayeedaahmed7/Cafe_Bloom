@@ -42,7 +42,7 @@ const MenuPreview = () => {
             <Sparkles className="text-primary" size={16} />
           </div>
           <h2 className="text-5xl md:text-6xl font-serif text-white mb-8">
-            The <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-primary to-indigo-300">Culinary</span> Gallery
+            The <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">Culinary</span> Gallery
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto leading-relaxed">
             Every dish is a prototype of perfection. Explore our meticulously curated menu 

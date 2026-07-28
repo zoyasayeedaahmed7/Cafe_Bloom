@@ -56,7 +56,7 @@ const About = () => {
                 className="w-full h-[650px] object-cover hover:scale-105 transition-transform duration-1000"
               />
               {/* Glass Overlay Card */}
-              <div className="absolute bottom-8 left-8 right-8 glass-indigo p-6 rounded-2xl border border-white/10">
+              <div className="absolute bottom-8 left-8 right-8 glass-wine p-6 rounded-2xl border border-white/10">
                 <p className="text-white font-serif italic text-lg text-center">
                   "Cooking is not just a skill, it's a language of the soul."
                 </p>
@@ -87,7 +87,7 @@ const About = () => {
 
             <motion.h2 variants={fadeIn("up", 0.2)} className="text-5xl md:text-6xl font-serif text-white mb-8 leading-[1.1]">
               Redefining the <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-indigo-300">Dining Protocol.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">Dining Protocol.</span>
             </motion.h2>
 
             <motion.div variants={fadeIn("up", 0.3)} className="space-y-6 text-slate-400 mb-12">

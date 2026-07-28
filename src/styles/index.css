@@ -1,29 +1,36 @@
 @import "tailwindcss";
 
 @theme {
-  /* --- 🎨 THE PRESTIGE COLOR SYSTEM --- */
-  
-  /* Brand Constants */
-  --color-primary: #6366f1;
-  --color-primary-light: #a5b4fc;
-  --color-primary-dark: #4338ca;
-  --color-gold: #fbbf24;
+  /* --- 🍷 THE BURGUNDY & BLACK COLOR SYSTEM --- */
 
-  /* 🌑 NIGHT MODE VARIABLES (Default) */
-  --color-bg-main: #020617;
-  --color-bg-soft: #0f172a;
+  /* Brand Constants.
+     `primary` is the fill colour — solid buttons, badges, pills. White text on
+     it clears 7:1 contrast.
+     `primary-light` is the accent *text* colour. Burgundy itself only reaches
+     ~2.6:1 on black, which is unreadable at small sizes, so anything that is
+     text-on-dark uses primary-light instead (~6.6:1). It is redefined inside
+     `.light` below so the same utility stays readable in day mode. */
+  --color-primary: #a81d40;
+  --color-primary-light: #e8909f;
+  --color-primary-dark: #6e0f27;
+  --color-primary-deep: #4a0a19;
+  --color-gold: #c9a227;
+
+  /* 🌑 NIGHT MODE (Default) — black with a faint wine warmth */
+  --color-bg-main: #0a0507;
+  --color-bg-soft: #150a0e;
   --color-surface: rgba(255, 255, 255, 0.03);
   --color-border-subtle: rgba(255, 255, 255, 0.08);
-  --color-text-base: #f8fafc;
-  --color-text-muted: #94a3b8;
+  --color-text-base: #faf6f7;
+  --color-text-muted: #a89096;
 
-  /* ☀️ DAY MODE VARIABLES */
-  --light-bg-main: #f8fafc;
+  /* ☀️ DAY MODE — warm off-white paper against burgundy ink */
+  --light-bg-main: #fbf7f7;
   --light-bg-soft: #ffffff;
-  --light-surface: rgba(0, 0, 0, 0.02);
-  --light-border-subtle: rgba(0, 0, 0, 0.06);
-  --light-text-base: #0f172a;
-  --light-text-muted: #475569;
+  --light-surface: rgba(74, 10, 25, 0.04);
+  --light-border-subtle: rgba(74, 10, 25, 0.12);
+  --light-text-base: #1f0a10;
+  --light-text-muted: #6b4a52;
 
   /* Typography */
   --font-serif: "Playfair Display", serif;
@@ -40,11 +47,12 @@
 
   body {
     @apply bg-bg-main text-text-base font-sans antialiased transition-colors duration-700 ease-in-out;
-    background-image: radial-gradient(circle at 50% -20%, rgba(99, 102, 241, 0.15), transparent 80%);
+    background-image: radial-gradient(circle at 50% -20%, rgba(168, 29, 64, 0.18), transparent 80%);
     min-height: 100vh;
   }
 
-  /* --- THEME TOGGLE LOGIC --- */
+  /* --- THEME TOGGLE LOGIC ---
+     ThemeToggle adds/removes `light` on <html>. */
   .light {
     color-scheme: light;
     --color-bg-main: var(--light-bg-main);
@@ -53,10 +61,12 @@
     --color-border-subtle: var(--light-border-subtle);
     --color-text-base: var(--light-text-base);
     --color-text-muted: var(--light-text-muted);
+    /* Accent text must go darker, not lighter, on a pale background. */
+    --color-primary-light: #8c1834;
   }
 
   .light body {
-    background-image: radial-gradient(circle at 50% -20%, rgba(186, 25, 0, 0.05), transparent 80%);
+    background-image: radial-gradient(circle at 50% -20%, rgba(168, 29, 64, 0.08), transparent 80%);
   }
 
   /* Smooth custom scrollbar */
@@ -71,6 +81,85 @@
   }
 }
 
+/* ─────────────────────────────────────────────────────────────────────────────
+   WARM NEUTRALS (both themes)
+
+   Components use Tailwind's `slate` scale for muted text. Slate is a cool,
+   blue-leaning grey that visibly clashes with a warm burgundy palette. These
+   remap each step to a warm neutral of roughly the same lightness, so nothing
+   changes in hierarchy — only in temperature. The day-mode block below
+   overrides them again with `!important`.
+   ──────────────────────────────────────────────────────────────────────────── */
+.text-slate-200 { color: #ece1e3; }
+.text-slate-300 { color: #d8c8cc; }
+.text-slate-400 { color: #b09aa0; }
+.text-slate-500 { color: #967f86; }
+.text-slate-600 { color: #7a646b; }
+.text-slate-700 { color: #5e4a51; }
+.text-gray-400  { color: #b09aa0; }
+.text-gray-500  { color: #967f86; }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   DAY-MODE COMPATIBILITY LAYER
+
+   The components were written for a permanently dark page, so they hardcode
+   `text-white`, `text-slate-*` and `bg-white/N` rather than theme tokens. In day
+   mode that renders white-on-white. Remapping those utilities here is a shim,
+   not a fix — the real fix is for components to use the semantic tokens above.
+   Keeping it in one block means there is a single place to delete once they do.
+   ──────────────────────────────────────────────────────────────────────────── */
+.light {
+  /* Text */
+  .text-white { color: #1f0a10 !important; }
+  .text-white\/90 { color: rgba(31, 10, 16, 0.9) !important; }
+  .text-white\/80 { color: rgba(31, 10, 16, 0.8) !important; }
+  .text-white\/70 { color: rgba(31, 10, 16, 0.7) !important; }
+  .text-white\/60 { color: rgba(31, 10, 16, 0.6) !important; }
+  .text-white\/50 { color: rgba(31, 10, 16, 0.6) !important; }
+  .text-white\/40 { color: rgba(31, 10, 16, 0.5) !important; }
+  .text-white\/20 { color: rgba(31, 10, 16, 0.35) !important; }
+  .text-white\/10 { color: rgba(31, 10, 16, 0.25) !important; }
+
+  .text-slate-200 { color: #2b1218 !important; }
+  .text-slate-300 { color: #3a1a21 !important; }
+  .text-slate-400 { color: #6b4a52 !important; }
+  .text-slate-500 { color: #7a565e !important; }
+  .text-slate-600 { color: #8a666e !important; }
+  .text-slate-700 { color: #9a767e !important; }
+  .text-gray-400 { color: #6b4a52 !important; }
+  .text-gray-500 { color: #7a565e !important; }
+
+  /* Translucent white surfaces become translucent burgundy */
+  .bg-white\/\[0\.02\] { background-color: rgba(74, 10, 25, 0.02) !important; }
+  .bg-white\/\[0\.03\] { background-color: rgba(74, 10, 25, 0.03) !important; }
+  .bg-white\/5 { background-color: rgba(74, 10, 25, 0.05) !important; }
+  .bg-white\/10 { background-color: rgba(74, 10, 25, 0.07) !important; }
+  .hover\:bg-white\/10:hover { background-color: rgba(74, 10, 25, 0.1) !important; }
+
+  /* Borders */
+  .border-white\/\[0\.02\] { border-color: rgba(74, 10, 25, 0.04) !important; }
+  .border-white\/5 { border-color: rgba(74, 10, 25, 0.08) !important; }
+  .border-white\/10 { border-color: rgba(74, 10, 25, 0.14) !important; }
+
+  /* Hero photo scrim. In night mode this is a dark wash that makes the light
+     hero text readable. Reusing bg-main for it in day mode turned the wash
+     near-white and erased the photograph, so day mode gets a lighter wash that
+     still leaves the image visible under the (now dark) heading. */
+  .hero-scrim {
+    background: linear-gradient(
+      to bottom,
+      rgba(251, 247, 247, 0.76) 0%,
+      rgba(251, 247, 247, 0.62) 45%,
+      rgba(251, 247, 247, 0.95) 100%
+    ) !important;
+  }
+
+  /* Opaque near-black panels used by Testimonials / Footer / Reservation */
+  .bg-\[\#0a0507\], .bg-\[\#150a0e\] { background-color: var(--light-bg-soft) !important; }
+  .bg-slate-950\/80, .bg-slate-900\/50 { background-color: rgba(74, 10, 25, 0.04) !important; }
+  .bg-slate-950 { background-color: var(--light-bg-main) !important; }
+}
+
 @layer components {
   /* 💎 Glassmorphic Card */
   .glass-card {
@@ -82,11 +171,32 @@
     @apply border-primary/30 -translate-y-2 shadow-[0_20px_50px_rgba(0,0,0,0.2)];
   }
 
+  /* 🍷 Wine-tinted glass — used by Hero's Chef's Special card and About's
+     quote overlay. These previously used a `glass-indigo` class that was never
+     defined anywhere, so both panels rendered completely unstyled. */
+  .glass-wine {
+    @apply relative overflow-hidden backdrop-blur-2xl;
+    background: linear-gradient(
+      135deg,
+      rgba(168, 29, 64, 0.18),
+      rgba(74, 10, 25, 0.35)
+    );
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .light .glass-wine {
+    background: linear-gradient(
+      135deg,
+      rgba(168, 29, 64, 0.1),
+      rgba(255, 255, 255, 0.6)
+    );
+  }
+
   /* 🔥 Luxury Interaction Button */
   .btn-luxury {
     @apply relative px-10 py-4 rounded-full font-bold uppercase tracking-[0.2em] text-[10px]
            bg-primary text-white overflow-hidden transition-all duration-500
-           hover:shadow-[0_0_30px_rgba(99,102,241,0.5)] hover:scale-105 active:scale-95;
+           hover:shadow-[0_0_30px_rgba(168,29,64,0.5)] hover:scale-105 active:scale-95;
     transition-timing-function: var(--ease-spring);
   }
 
@@ -103,7 +213,7 @@
   /* ✨ Aurora Background Glow */
   .aurora {
     @apply absolute blur-[120px] rounded-full pointer-events-none opacity-40 mix-blend-screen;
-    background: linear-gradient(45deg, var(--color-primary), #818cf8);
+    background: linear-gradient(45deg, var(--color-primary), #d4536f);
   }
 
   /* 🧊 Premium Gradient Text */
@@ -116,9 +226,18 @@
   .theme-icon {
     transition: transform 600ms var(--ease-spring);
   }
-  
+
   .light .theme-icon {
     @apply rotate-[360deg];
+  }
+
+  /* Hide the scrolling category strip's scrollbar (used on the menu page). */
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
 }
 
@@ -132,8 +251,8 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: 
-    radial-gradient(at 20% 20%, rgba(99, 102, 241, 0.1), transparent 50%),
-    radial-gradient(at 80% 80%, rgba(79, 70, 229, 0.08), transparent 50%);
+  background-image:
+    radial-gradient(at 20% 20%, rgba(168, 29, 64, 0.12), transparent 50%),
+    radial-gradient(at 80% 80%, rgba(110, 15, 39, 0.1), transparent 50%);
   pointer-events: none;
 }

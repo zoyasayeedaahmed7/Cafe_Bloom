@@ -33,11 +33,11 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-[#020617] pt-32 pb-8 overflow-hidden border-t border-white/5">
+    <footer className="relative bg-[#0a0507] pt-32 pb-8 overflow-hidden border-t border-white/5">
       {/* --- Advanced Background FX --- */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 blur-[120px] rounded-full animate-pulse" />
-        <div className="absolute top-1/2 left-0 w-64 h-64 bg-indigo-500/5 blur-[100px] rounded-full" />
+        <div className="absolute top-1/2 left-0 w-64 h-64 bg-primary/5 blur-[100px] rounded-full" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -49,7 +49,7 @@ const Footer = () => {
           viewport={{ once: true }}
           className="relative mb-24 group"
         >
-          <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 to-indigo-500/30 rounded-[3rem] blur-xl opacity-50 group-hover:opacity-100 transition duration-1000" />
+          <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 to-primary/30 rounded-[3rem] blur-xl opacity-50 group-hover:opacity-100 transition duration-1000" />
           <div className="relative bg-slate-950/80 backdrop-blur-3xl rounded-[2.8rem] border border-white/10 p-8 md:p-16 overflow-hidden">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
               <div className="max-w-xl text-center lg:text-left space-y-4">
@@ -145,15 +145,16 @@ const Footer = () => {
               <h4 className="text-white font-serif text-xl flex items-center gap-3">
                 <MapPin size={20} className="text-primary" /> The Venue
               </h4>
-              <div className="text-xs font-mono text-primary/60 bg-primary/5 px-4 py-2 rounded-lg border border-primary/10">
-                Lat: 28.6273° N | Long: 77.3725° E
+              <div className="text-xs font-mono text-primary-light/70 bg-primary/5 px-4 py-2 rounded-lg border border-primary/10">
+                Lat: 12.8797° N | Long: 77.5850° E
               </div>
             </div>
 
             <div className="relative h-64 w-full rounded-[2.5rem] overflow-hidden group shadow-inner">
                <div className="absolute inset-0 bg-primary/20 mix-blend-color pointer-events-none z-10 opacity-40 group-hover:opacity-0 transition-opacity duration-700" />
-               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14008.11482718888!2d77.3703!3d28.6273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM3JzM4LjMiTiA3N8KwMjInMTMuMSJF!5e0!3m2!1sen!2sin!4v1634567890123!5m2!1sen!2sin"
+               <iframe
+                title="Map showing Cafe Bloom in Gottigere, Bangalore"
+                src="https://www.google.com/maps?q=Gottigere,+Bangalore,+Karnataka&z=14&output=embed"
                 className="w-full h-full grayscale hover:grayscale-0 contrast-125 transition-all duration-1000 scale-105 group-hover:scale-100"
                 loading="lazy"
               />
@@ -177,7 +178,7 @@ const Footer = () => {
               <div className="flex flex-col">
                 <span className="text-[10px] uppercase font-black tracking-[0.2em] text-white">Live Service</span>
                 <span className="text-[9px] text-slate-500 font-mono italic">
-                  Kitchen Active • Serving Sector 62, Noida
+                  Kitchen Active • Serving Gottigere, Bangalore
                 </span>
               </div>
             </div>

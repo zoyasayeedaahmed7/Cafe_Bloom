@@ -4,9 +4,9 @@ import { Plus, Minus, ShoppingBag, Check } from "lucide-react";
 import { useCart } from "../../context/CartContext";
 
 const toastStyle = {
-  background: "#0b1120",
+  background: "#150a0e",
   color: "#e2e8f0",
-  border: "1px solid rgba(99,102,241,0.35)",
+  border: "1px solid rgba(168, 29, 64,0.35)",
   borderRadius: "14px",
   fontSize: "13px",
 };

@@ -35,7 +35,7 @@ const Hero = () => {
             transition={{ duration: 2, ease: "easeOut" }}
             className="absolute inset-0 w-full h-full"
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-bg-main/80 via-bg-main/40 to-bg-main z-10" />
+            <div className="hero-scrim absolute inset-0 bg-gradient-to-b from-bg-main/80 via-bg-main/40 to-bg-main z-10" />
             <img 
               src={HERO_IMAGES[currentImg]} 
               className="w-full h-full object-cover"
@@ -61,14 +61,14 @@ const Hero = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
-            NOW OPEN IN SECTOR 62, NOIDA
+            NOW OPEN IN GOTTIGERE, BANGALORE
           </motion.div>
 
           <motion.h1 
             variants={fadeIn("up", 0.4)}
             className="text-6xl md:text-8xl font-serif text-white mb-6 leading-[1.05]"
           >
-            Taste the <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-indigo-300 italic">Future</span> <br /> 
+            Taste the <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light italic">Future</span> <br /> 
             of Fine Dining.
           </motion.h1>
 
@@ -86,7 +86,7 @@ const Hero = () => {
             className="flex flex-wrap gap-4 justify-center lg:justify-start"
           >
             {/* CTA 1: Must Try */}
-            <Link to="/order" className="group relative px-8 py-4 bg-primary rounded-2xl font-bold text-white overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(99,102,241,0.4)]">
+            <Link to="/order" className="group relative px-8 py-4 bg-primary rounded-2xl font-bold text-white overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(168, 29, 64,0.4)]">
               <span className="relative z-10 flex items-center gap-2">
                 <UtensilsCrossed size={18} /> Must Try <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </span>
@@ -119,7 +119,7 @@ const Hero = () => {
           transition={{ duration: 1, delay: 0.5 }}
           className="hidden lg:block relative"
         >
-          <div className="glass-indigo p-8 rounded-[2.5rem] border border-white/10 relative z-20">
+          <div className="glass-wine p-8 rounded-[2.5rem] border border-white/10 relative z-20">
             <h3 className="text-white font-serif text-2xl mb-4 italic">Chef's Special</h3>
             <img 
               src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" 
