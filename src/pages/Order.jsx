@@ -8,9 +8,9 @@ import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 
 const toastStyle = {
-  background: "#150a0e",
+  background: "#1a0e14",
   color: "#e2e8f0",
-  border: "1px solid rgba(168, 29, 64,0.35)",
+  border: "1px solid rgba(166, 38, 72,0.35)",
   borderRadius: "14px",
   fontSize: "13px",
 };

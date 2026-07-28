@@ -39,10 +39,10 @@ const Frame = ({
 /** 🎨 BUTTON VARIANTS & COLORS **/
 const COLORS = {
   default: {
-    stroke1: "#a81d40", // Gold for Cafe Bloom
-    fill1: "rgba(168, 29, 64, 0.22)",
-    stroke2: "#a81d40",
-    fill2: "rgba(168, 29, 64, 0.1)",
+    stroke1: "#a62648", // Gold for Cafe Bloom
+    fill1: "rgba(166, 38, 72, 0.22)",
+    stroke2: "#a62648",
+    fill2: "rgba(166, 38, 72, 0.1)",
     // Theme token, not a literal — a hardcoded #ffffff left the Enquiry label
     // invisible against day mode's pale background.
     text: "var(--color-text-base)",

@@ -15,8 +15,8 @@ const Navbar = () => {
   const { status } = getRestaurantStatus();
   const { count } = useCart();
   
-  const primaryStroke = "#a81d40"; 
-  const primaryFill = "rgba(168, 29, 64, 0.1)";
+  const primaryStroke = "#a62648"; 
+  const primaryFill = "rgba(166, 38, 72, 0.1)";
 
   const openWhatsApp = () => {
     const phoneNumber = "919620996689";
@@ -43,7 +43,7 @@ const Navbar = () => {
               paths={[
                 {
                   show: true,
-                  style: { strokeWidth: "1", stroke: primaryStroke, fill: "rgba(168, 29, 64,0.05)" },
+                  style: { strokeWidth: "1", stroke: primaryStroke, fill: "rgba(166,38,72,0.05)" },
                   path: [["M","0","0"],["L","100% - 6","0"],["L","100% - 11","100% - 64"],["L","100% + 0","0% + 29"],["L","0","11"],["L","0","0"]]
                 }
               ]}
@@ -54,7 +54,7 @@ const Navbar = () => {
           <div className="flex-none h-full px-12 relative w-full lg:w-auto min-w-[580px]">
             <Frame
               enableBackdropBlur
-              className="drop-shadow-[0_0_10px_rgba(168, 29, 64,0.1)]"
+              className="drop-shadow-[0_0_10px_rgba(166,38,72,0.1)]"
               paths={[
                 {
                   show: true,
@@ -103,7 +103,7 @@ const Navbar = () => {
               paths={[
                 {
                   show: true,
-                  style: { strokeWidth: "1", stroke: primaryStroke, fill: "rgba(168, 29, 64,0.05)" },
+                  style: { strokeWidth: "1", stroke: primaryStroke, fill: "rgba(166,38,72,0.05)" },
                   path: [["M","19","0"],["L","100% - 5","0"],["L","100% + 0","0% + 7"],["L","100% - 36","100% - 20"],["L","0","100% - 20"],["L","25","8.9"],["L","19","1"]]
                 }
               ]}

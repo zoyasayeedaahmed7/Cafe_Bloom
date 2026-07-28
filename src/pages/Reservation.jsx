@@ -20,7 +20,7 @@ const Reservation = () => {
   ];
 
   return (
-    <div className="pt-40 pb-24 bg-[#0a0507] relative overflow-hidden">
+    <div className="pt-40 pb-24 bg-[#0e0609] relative overflow-hidden">
       {/* Background Decorative Elements */}
       <motion.div style={{ y: y1 }} className="absolute top-20 right-[-10%] w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full" />
       <motion.div style={{ y: y2 }} className="absolute bottom-40 left-[-5%] w-[400px] h-[400px] bg-primary/10 blur-[100px] rounded-full" />

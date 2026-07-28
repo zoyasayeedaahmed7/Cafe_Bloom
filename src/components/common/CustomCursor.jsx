@@ -46,13 +46,13 @@ const CustomCursor = () => {
         animate={{
           width: isHovered ? 80 : 40,
           height: isHovered ? 80 : 40,
-          backgroundColor: isHovered ? "rgba(168, 29, 64, 0.15)" : "rgba(168, 29, 64, 0.05)",
+          backgroundColor: isHovered ? "rgba(166, 38, 72, 0.15)" : "rgba(166, 38, 72, 0.05)",
         }}
       />
 
       {/* 2. Central Dot (The "Precision" Point) */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] w-2 h-2 bg-primary rounded-full shadow-[0_0_15px_rgba(168, 29, 64,0.8)]"
+        className="fixed top-0 left-0 pointer-events-none z-[9999] w-2 h-2 bg-primary rounded-full shadow-[0_0_15px_rgba(166,38,72,0.8)]"
         style={{
           x: cursorX,
           y: cursorY,

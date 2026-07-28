@@ -33,7 +33,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-[#0a0507] pt-32 pb-8 overflow-hidden border-t border-white/5">
+    <footer className="relative bg-[#0e0609] pt-32 pb-8 overflow-hidden border-t border-white/5">
       {/* --- Advanced Background FX --- */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 blur-[120px] rounded-full animate-pulse" />
@@ -209,14 +209,22 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Final Encrypted Brand Mark */}
-        <div className="mt-16 text-center border-t border-white/[0.02] pt-8">
+        {/* Final Brand Mark & Copyright */}
+        <div className="mt-16 text-center border-t border-white/[0.02] pt-8 space-y-4">
            <div className="flex items-center justify-center gap-3 text-slate-700">
               <ShieldCheck size={14} className="opacity-20" />
               <p className="text-[9px] uppercase font-black tracking-[0.5em] opacity-30">
                 Secured Digital Environment <span className="text-primary mx-2">•</span> Design by Satyam
               </p>
            </div>
+
+           <p className="text-[11px] text-slate-500 tracking-wide">
+             © {currentTime.getFullYear()} <span className="text-primary-light font-semibold">Cafe Bloom</span>. All rights reserved.
+           </p>
+
+           <p className="text-[10px] text-slate-600">
+             Made with care in Gottigere, Bangalore.
+           </p>
         </div>
       </div>
     </footer>

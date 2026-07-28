@@ -51,9 +51,9 @@ const ReservationForm = () => {
 
     toast.success("Opening WhatsApp...", {
       style: {
-        background: "#0a0507",
-        color: "#a81d40",
-        border: "1px solid rgba(168, 29, 64,0.3)",
+        background: "#0e0609",
+        color: "#a62648",
+        border: "1px solid rgba(166, 38, 72,0.3)",
         borderRadius: "12px",
       },
     });
@@ -65,7 +65,7 @@ const ReservationForm = () => {
   };
 
   return (
-    <section className="py-28 bg-[#0a0507] relative overflow-hidden">
+    <section className="py-28 bg-[#0e0609] relative overflow-hidden">
       <motion.div
         animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
         transition={{ duration: 8, repeat: Infinity }}

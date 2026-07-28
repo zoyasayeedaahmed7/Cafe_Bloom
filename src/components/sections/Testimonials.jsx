@@ -12,7 +12,7 @@ import "swiper/css/effect-coverflow";
 
 const Testimonials = () => {
   return (
-    <section className="py-32 bg-[#0a0507] relative overflow-hidden">
+    <section className="py-32 bg-[#0e0609] relative overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none">
         <div className="absolute top-1/4 left-10 w-72 h-72 bg-primary/10 blur-[120px] rounded-full" />
@@ -81,7 +81,7 @@ const Testimonials = () => {
                 {/* Card Glow Effect */}
                 <div className="absolute -inset-0.5 bg-gradient-to-b from-primary/20 to-transparent rounded-[2.5rem] blur opacity-0 group-hover:opacity-100 transition duration-500" />
                 
-                <div className="relative bg-[#150a0e]/80 backdrop-blur-xl border border-white/5 p-8 md:p-10 rounded-[2.5rem] h-full flex flex-col justify-between overflow-hidden shadow-2xl">
+                <div className="relative bg-[#1a0e14]/80 backdrop-blur-xl border border-white/5 p-8 md:p-10 rounded-[2.5rem] h-full flex flex-col justify-between overflow-hidden shadow-2xl">
                   
                   {/* Decorative Quote Icon */}
                   <Quote className="absolute top-6 right-8 text-primary/10 group-hover:text-primary/20 transition-colors" size={80} />
@@ -111,7 +111,7 @@ const Testimonials = () => {
                         className="w-14 h-14 rounded-2xl object-cover border-2 border-primary/20 group-hover:border-primary transition-colors duration-500" 
                       />
                       {review.verified && (
-                        <div className="absolute -bottom-1 -right-1 bg-primary text-white rounded-full p-0.5 border-2 border-[#0a0507]">
+                        <div className="absolute -bottom-1 -right-1 bg-primary text-white rounded-full p-0.5 border-2 border-[#0e0609]">
                           <CheckCircle2 size={12} />
                         </div>
                       )}
@@ -136,7 +136,7 @@ const Testimonials = () => {
       {/* Custom Styles for Swiper Bullets */}
       <style jsx global>{`
         .testimonial-swiper .swiper-pagination-bullet {
-          background: #a81d40 !important;
+          background: #a62648 !important;
           opacity: 0.3;
           width: 8px;
           height: 8px;
@@ -146,7 +146,7 @@ const Testimonials = () => {
           opacity: 1;
           width: 24px;
           border-radius: 4px;
-          background: #a81d40 !important;
+          background: #a62648 !important;
         }
       `}</style>
     </section>
