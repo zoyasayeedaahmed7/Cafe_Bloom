@@ -26,8 +26,8 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { Icon: FaInstagram, href: "#", color: "hover:text-pink-500", label: "Instagram" },
-    { Icon: FaFacebook, href: "#", color: "hover:text-blue-600", label: "Facebook" },
+    { Icon: FaInstagram, href: "https://www.instagram.com/zoyasayeedaahmed7?igsh=aWo0d2x1NWl5dHdq", color: "hover:text-pink-500", label: "Instagram" },
+    { Icon: FaFacebook, href: "https://share.google/wuCUVo1sN6Sb2VhTD", color: "hover:text-blue-600", label: "Facebook" },
     { Icon: FaTwitter, href: "#", color: "hover:text-sky-400", label: "Twitter" },
     { Icon: FaLinkedin, href: "#", color: "hover:text-blue-700", label: "LinkedIn" },
   ];
@@ -85,7 +85,7 @@ const Footer = () => {
           <div className="space-y-10">
             <div className="space-y-6">
               <h2 className="text-4xl font-black tracking-tighter text-white">
-                CAFE<span className="text-primary italic">NOVA</span>
+                CAFE<span className="text-primary italic">BLOOM</span>
               </h2>
               <p className="text-slate-400 leading-relaxed text-base">
                 Synthesizing avant-garde culinary techniques with digital sophistication. A sanctuary for the modern connoisseur.

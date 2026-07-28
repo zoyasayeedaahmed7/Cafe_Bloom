@@ -1,19 +1,23 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { menuData } from "../../data/menuData";
+import { menuData, mustTryDishes } from "../../data/menuData";
 import { fadeIn, staggerContainer } from "../../utils/animations";
 import GlassCard from "../ui/GlassCard";
 import { formatPrice } from "../../utils/helpers";
 import { Flame, Leaf, Star, Sparkles } from "lucide-react";
+import AddToCartButton from "../ui/AddToCartButton";
 
-const categories = ["All", "Breakfast", "Starters", "Dinner", "Fast Food", "Sweets", "Drinks"];
+const categories = ["Must Try", "All", "Breakfast", "Starters", "Dinner", "Fast Food", "Sweets", "Drinks"];
 
 const MenuPreview = () => {
   const [activeTab, setActiveTab] = useState("All");
 
-  const filteredMenu = activeTab === "All" 
-    ? menuData 
-    : menuData.filter(item => item.category === activeTab);
+  const filteredMenu =
+    activeTab === "Must Try"
+      ? mustTryDishes
+      : activeTab === "All"
+      ? menuData
+      : menuData.filter(item => item.category === activeTab);
 
   return (
     <section id="menu" className="py-32 bg-bg-main relative overflow-hidden">
@@ -90,10 +94,10 @@ const MenuPreview = () => {
                 transition={{ duration: 0.5 }}
                 className="h-full"
               >
-                <GlassCard className="group relative overflow-hidden h-[520px] p-0 border-white/5 hover:border-primary/30 transition-all duration-500">
-                  
+                <GlassCard className="group relative overflow-hidden h-[600px] p-0 flex flex-col border-white/5 hover:border-primary/30 transition-all duration-500">
+
                   {/* Top Image Section */}
-                  <div className="relative h-3/5 overflow-hidden">
+                  <div className="relative h-[48%] shrink-0 overflow-hidden">
                     <img 
                       src={item.image} 
                       alt={item.name} 
@@ -122,7 +126,7 @@ const MenuPreview = () => {
                   </div>
 
                   {/* Content Section */}
-                  <div className="p-8 space-y-4">
+                  <div className="p-8 space-y-4 flex flex-col flex-grow">
                     <div className="flex justify-between items-end">
                       <div className="space-y-1">
                         <p className="text-primary text-[10px] font-bold tracking-[0.2em] uppercase">
@@ -141,12 +145,16 @@ const MenuPreview = () => {
                       {item.description}
                     </p>
 
-                    {/* Bottom Detail: Hover Reveal Text */}
-                    <div className="pt-4 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                       <Leaf size={14} className="text-primary" />
-                       <span className="text-[10px] text-slate-500 uppercase tracking-[0.1em]">
-                         Crafted with organic ingredients
-                       </span>
+                    {/* Bottom Detail + cart action */}
+                    <div className="mt-auto space-y-4 pt-2">
+                      <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <Leaf size={14} className="text-primary" />
+                        <span className="text-[10px] text-slate-500 uppercase tracking-[0.1em]">
+                          Crafted with organic ingredients
+                        </span>
+                      </div>
+
+                      <AddToCartButton item={item} />
                     </div>
                   </div>
                 </GlassCard>

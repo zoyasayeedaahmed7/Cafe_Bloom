@@ -9,6 +9,7 @@ export const menuData = [
   { id: 107, name: "Açaí Smoothie Bowl", category: "Breakfast", price: 480, image: "https://plus.unsplash.com/premium_photo-1663840278090-32c56b18e075?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YWNhaSUyMHNtb290aGllJTIwYm93bHxlbnwwfHwwfHx8MA%3D%3D", description: "Pure açaí, granola, chia seeds, and tropical fruit.", tags: ["Superfood"], calories: "290 kcal" },
   { id: 108, name: "French Omelette", category: "Breakfast", price: 320, image: "https://images.unsplash.com/photo-1510629954389-c1e0da47d414?w=600", description: "Silky smooth eggs with gruyère and chives.", tags: ["Classic"], calories: "340 kcal" },
   {id:109, name: "Breakfast Parfait", category: "Breakfast", price: 300, image: "https://images.unsplash.com/photo-1550594645-25c5bd703258?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnJlYWtmYXN0JTIwcGFyZmFpdHxlbnwwfHwwfHx8MA%3D%3D", description: "Layers of yogurt, granola, and fresh berries.", tags: ["Healthy"], calories: "250 kcal" },
+  {id:110, name: "Cinnamon Roll Delight", category: "Breakfast", price: 350, image: "https://images.unsplash.com/photo-1694632288834-17d86b340745?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2luYW1tb24lMjByb2xsfGVufDB8fDB8fHww", description: "Soft cinnamon rolls with cream cheese icing.", tags: ["Sweet"], calories: "480 kcal" },
 
   // 🍲 STARTERS (9-16)
   { id: 1, name: "Smoked Salmon Crostini", category: "Starters", price: 550, image: "https://images.unsplash.com/photo-1541529086526-db283c563270?w=600", description: "Sourdough, cream cheese, capers, and salmon.", tags: ["Healthy"], calories: "220 kcal" },
@@ -20,6 +21,7 @@ export const menuData = [
   { id: 7, name: "Bruschetta Pomodoro", category: "Starters", price: 280, image: "https://plus.unsplash.com/premium_photo-1677686707252-16013f466e61?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnJ1c2NoZXR0YXxlbnwwfHwwfHx8MA%3D%3D", description: "Tomatoes, garlic, and basil on grilled bread.", tags: ["Vegan"], calories: "180 kcal" },
   { id: 8, name: "Dynamite Shrimp", category: "Starters", price: 590, image: "https://images.unsplash.com/photo-1559742811-822873691df8?w=600", description: "Crispy shrimp tossed in spicy sriracha mayo.", tags: ["Spicy"], calories: "450 kcal" },
   {id: 9, name: "Caprese Salad", category: "Starters", price: 400, image: "https://plus.unsplash.com/premium_photo-1671403964050-f7756da6c60b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2FwcmVzZSUyMHNhbGFkfGVufDB8fDB8fHww", description: "Fresh mozzarella, tomatoes, and basil.", tags: ["Vegetarian"], calories: "250 kcal" },
+  {id: 10, name: "Buffalo Cauliflower Bites", category: "Starters", price: 350, image: "https://plus.unsplash.com/premium_photo-1664647731630-0a2422c30137?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YnVmZmFsbyUyMGNhdWxpZmxvd2VyJTIwYml0ZXN8ZW58MHx8MHx8fDA%3D", description: "Crispy cauliflower with buffalo sauce.", tags: ["Vegan"], calories: "300 kcal" },
 
   // 🍝 MAIN COURSE / DINNER (17-25)
   { id: 401, name: "Truffle Mushroom Risotto", category: "Dinner", price: 850, image: "https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=600", description: "Creamy risotto with wild mushrooms.", tags: ["Best Seller"], calories: "450 kcal" },
@@ -32,6 +34,7 @@ export const menuData = [
   { id: 408, name: "Vegetable Paella", category: "Dinner", price: 720, image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600", description: "Saffron rice with artichokes and peppers.", tags: ["Vegan"], calories: "490 kcal" },
   { id: 409, name: "Chicken Schnitzel", category: "Dinner", price: 590, image: "https://images.unsplash.com/photo-1653983483420-5bbd23c89cbf?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2hpY2tlbiUyMHNjaG5pdHplbHxlbnwwfHwwfHx8MA%3D%3D", description: "Breaded chicken with potato salad.", tags: ["Crispy"], calories: "630 kcal" },
   {id: 410, name: "Seafood Paella", category: "Dinner", price: 950, image: "https://plus.unsplash.com/premium_photo-1731953243143-c69471ac68c9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2VhZm9vZCUyMHBhZWxsYXxlbnwwfHwwfHx8MA%3D%3D", description: "Saffron rice with shrimp, mussels, and calamari.", tags: ["Seafood"], calories: "700 kcal" },
+  {id: 411, name: "Ratatouille", category: "Dinner", price: 480, image: "https://plus.unsplash.com/premium_photo-1713635953263-3dfbf736f73e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8UmF0YXRvdWlsbGV8ZW58MHx8MHx8fDA%3D", description: "Layered vegetables with tomato sauce.", tags: ["Vegan"], calories: "350 kcal" },
 
   // 🍕 FAST FOOD (26-33)
   { id: 201, name: "Margherita Pizza", category: "Fast Food", price: 500, image: "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?w=600", description: "Mozzarella and fresh basil.", tags: ["Classic"], calories: "700 kcal" },
@@ -43,9 +46,11 @@ export const menuData = [
   { id: 207, name: "BBQ Chicken Pizza", category: "Fast Food", price: 580, image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600", description: "Grilled chicken and smoky BBQ sauce.", tags: ["Sweet"], calories: "820 kcal" },
   { id: 208, name: "Crispy Hot Dog", category: "Fast Food", price: 290, image: "https://images.unsplash.com/photo-1541214113241-21578d2d9b62?w=600", description: "Premium beef sausage with relish.", tags: ["Snack"], calories: "450 kcal" },
   {id: 209, name: "Buffalo Wings", category: "Fast Food", price: 500, image: "https://images.unsplash.com/photo-1608039755401-742074f0548d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnVmZmFsbyUyMHdpbmdzfGVufDB8fDB8fHww", description: "Spicy chicken wings with blue cheese dip.", tags: ["Spicy"], calories: "600 kcal" },
+  {id: 210, name: "Veggie Quesadilla", category: "Fast Food", price: 350, image: "https://images.unsplash.com/photo-1669271474330-9e9181bf284e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHZlZ2dpZSUyMFF1ZXNhZGlsbGF8ZW58MHx8MHx8fDA%3D", description: "Grilled tortilla with cheese and peppers.", tags: ["Vegetarian"], calories: "400 kcal" },
+
 
   // 🍰 SWEETS (34-42)
-  { id: 301, name: "Midnight Lava Cake", category: "Sweets", price: 450, image: "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=600", description: "Molten center chocolate cake.", tags: ["Special"], calories: "600 kcal" },
+  { id: 301, name: "Midnight Lava Cake", category: "Sweets", price: 450, image: "https://images.unsplash.com/photo-1511911063855-2bf39afa5b2e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWlkbmlnaHQlMjBsYXZhJTIwY2FrZXxlbnwwfHwwfHx8MA%3D%3D", description: "Molten center chocolate cake.", tags: ["Special"], calories: "600 kcal" },
   { id: 302, name: "New York Cheesecake", category: "Sweets", price: 480, image: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=600", description: "Creamy with berry compote.", tags: ["Classic"], calories: "550 kcal" },
   { id: 303, name: "Tiramisu", category: "Sweets", price: 520, image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600", description: "Espresso-soaked ladyfingers with mascarpone.", tags: ["Italian"], calories: "480 kcal" },
   { id: 304, name: "Gulab Jamun Fusion", category: "Sweets", price: 350, image: "https://images.unsplash.com/photo-1593701461250-d7b22dfd3a77?w=600", description: "Warm dumplings with vanilla bean ice cream.", tags: ["Fusion"], calories: "420 kcal" },
@@ -55,6 +60,9 @@ export const menuData = [
   { id: 308, name: "Baklava Plate", category: "Sweets", price: 420, image: "https://images.unsplash.com/photo-1643356866184-b753f7c8da08?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmFrbGF2YSUyMHBsYXRlfGVufDB8fDB8fHww", description: "Phyllo pastry with honey and pistachios.", tags: ["Nuts"], calories: "500 kcal" },
   { id: 309, name: "Choco Chip Cookie", category: "Sweets", price: 150, image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hvY28lMjBjaGlwJTIwY29va2llfGVufDB8fDB8fHww", description: "Large warm cookie with dark chocolate chips.", tags: ["Snack"], calories: "280 kcal" },
   {id: 310, name: "Raspberry Mille-Feuille", category: "Sweets", price: 500, image: "https://images.unsplash.com/photo-1621659121450-dc03d85f1b49?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFzcGJlcnJ5JTIwbWlsbGV8ZW58MHx8MHx8fDA%3D", description: "Layers of puff pastry with raspberry cream.", tags: ["Elegant"], calories: "450 kcal" },
+  {id: 311, name: "Chocolate Éclair", category: "Sweets", price: 400, image: "https://images.unsplash.com/photo-1613992281296-b48e3d37876b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2hvY2xhdGUlMjBlY2xhaXJ8ZW58MHx8MHx8fDA%3D", description: "Choux pastry filled with chocolate cream.", tags: ["French"], calories: "400 kcal" },
+  {id: 312, name: "Pistachio Gelato", category: "Sweets", price: 350, image: "", description: "Creamy Italian pistachio ice cream.", tags: ["Cold"], calories: "250 kcal" },
+  
 
   // ☕ DRINKS (43-52)
   { id: 501, name: "Artisan Cappuccino", category: "Drinks", price: 220, image: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600", description: "Espresso with thick foam.", tags: ["Hot"], calories: "150 kcal" },
@@ -69,3 +77,12 @@ export const menuData = [
   { id: 510, name: "Blue Lagoon Mocktail", category: "Drinks", price: 270, image: "https://plus.unsplash.com/premium_photo-1671014947847-ba033c6b9e19?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Ymx1ZSUyMGxhZ29vbiUyMGRyaW5rfGVufDB8fDB8fHww", description: "Blue curacao syrup with sprite and lemon.", tags: ["Cold"], calories: "140 kcal" },
   {id: 511, name: "Coconut Water", category: "Drinks", price: 200, image: "https://plus.unsplash.com/premium_photo-1680497044033-5dc96f699b81?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29jb251dCUyMHdhdGVyfGVufDB8fDB8fHww", description: "Fresh coconut water served chilled.", tags: ["Natural"], calories: "45 kcal" },
 ];
+
+// The "Must Try" filter — five signature dishes, one per course, listed in the
+// order they should appear. Edit this list to change what the tab shows.
+export const MUST_TRY_IDS = [6, 401, 406, 202, 301];
+
+// Resolved in MUST_TRY_IDS order; `filter` drops any id that no longer exists.
+export const mustTryDishes = MUST_TRY_IDS
+  .map((id) => menuData.find((item) => item.id === id))
+  .filter(Boolean);

@@ -15,6 +15,16 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import Lottie from "lottie-react";
 import bookingAnimation from "../../assets/animations/booking.json";
 
+// Native <select> popups are painted by the OS, not by our CSS. The options
+// inherit `text-white` from the select but the popup's own background stays the
+// browser default (white), so the text disappears. `[color-scheme:dark]` makes
+// Chrome/Edge render the popup dark, and the explicit option colours below cover
+// browsers that ignore it.
+const selectClasses =
+  "w-full pl-10 pr-10 py-3 rounded-xl bg-white/10 text-white border border-white/10 " +
+  "outline-none focus:border-indigo-400 [color-scheme:dark] cursor-pointer";
+const optionClasses = "bg-slate-900 text-white";
+
 const ReservationForm = () => {
   const {
     register,
@@ -143,13 +153,10 @@ const ReservationForm = () => {
                   <label className="text-xs text-gray-400">Time</label>
                   <div className="relative mt-1">
                     <Clock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" />
-                    <select
-                      {...register("time")}
-                      className="w-full pl-10 py-3 rounded-xl bg-white/10 text-white border border-white/10"
-                    >
-                      <option>07:00 PM</option>
-                      <option>08:00 PM</option>
-                      <option>09:00 PM</option>
+                    <select {...register("time")} className={selectClasses}>
+                      <option className={optionClasses}>07:00 PM</option>
+                      <option className={optionClasses}>08:00 PM</option>
+                      <option className={optionClasses}>09:00 PM</option>
                     </select>
                   </div>
                 </div>
@@ -158,14 +165,11 @@ const ReservationForm = () => {
                   <label className="text-xs text-gray-400">Guests</label>
                   <div className="relative mt-1">
                     <Users className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" />
-                    <select
-                      {...register("guests")}
-                      className="w-full pl-10 py-3 rounded-xl bg-white/10 text-white border border-white/10"
-                    >
-                      <option>2</option>
-                      <option>4</option>
-                      <option>6</option>
-                      <option>8</option>
+                    <select {...register("guests")} className={selectClasses}>
+                      <option className={optionClasses}>2</option>
+                      <option className={optionClasses}>4</option>
+                      <option className={optionClasses}>6</option>
+                      <option className={optionClasses}>8</option>
                     </select>
                   </div>
                 </div>

@@ -3,6 +3,7 @@ import { Zap, MessageCircle } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { Frame, FutureButton } from "../ui/FutureNavbar";
 import { getRestaurantStatus } from "../../utils/helpers";
+import { useCart } from "../../context/CartContext";
 
 export const MobileMenuContext = createContext({
   showMenu: false,
@@ -12,13 +13,14 @@ export const MobileMenuContext = createContext({
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const { status } = getRestaurantStatus();
+  const { count } = useCart();
   
   const primaryStroke = "#fbbf24"; 
   const primaryFill = "rgba(251, 191, 36, 0.1)";
 
   const openWhatsApp = () => {
     const phoneNumber = "919620996689";
-    const msg = "Hello CafeNova! I have an enquiry regarding my visit.";
+    const msg = "Hello Cafe Bloom! I have an enquiry regarding my visit.";
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
@@ -64,17 +66,23 @@ const Navbar = () => {
             
             <div className="flex items-center mt-3 relative z-20">
               <NavLink to="/" className="me-10 font-serif font-black text-xl tracking-tighter text-white">
-                CAFE<span className="text-yellow-500 italic">NOVA</span>
+                CAFE<span className="text-yellow-500 italic">BLOOM</span>
               </NavLink>
 
               <div className="hidden lg:flex gap-6 font-bold text-[10px] uppercase tracking-[0.2em]">
                 {navLinks.map((link) => (
-                  <NavLink 
-                    key={link.path} 
-                    to={link.path} 
-                    className={({ isActive }) => isActive ? "text-yellow-500" : "text-white/50 hover:text-white transition-colors"}
+                  <NavLink
+                    key={link.path}
+                    to={link.path}
+                    className={({ isActive }) => `relative ${isActive ? "text-yellow-500" : "text-white/50 hover:text-white transition-colors"}`}
                   >
                     {link.name}
+                    {/* Live cart count, so an added item is visible immediately */}
+                    {link.path === "/order" && count > 0 && (
+                      <span className="absolute -top-2 -right-4 min-w-[16px] h-4 px-1 rounded-full bg-yellow-500 text-black text-[9px] font-black flex items-center justify-center tabular-nums">
+                        {count > 99 ? "99+" : count}
+                      </span>
+                    )}
                   </NavLink>
                 ))}
               </div>

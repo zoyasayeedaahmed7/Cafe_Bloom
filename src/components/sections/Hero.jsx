@@ -39,7 +39,7 @@ const Hero = () => {
             <img 
               src={HERO_IMAGES[currentImg]} 
               className="w-full h-full object-cover"
-              alt="CafeNova Ambiance"
+              alt="Cafe Bloom Ambiance"
             />
           </motion.div>
         </AnimatePresence>
@@ -131,7 +131,7 @@ const Hero = () => {
                 <p className="text-white font-bold">Wild Glazed Salmon</p>
                 <p className="text-primary text-sm">Served with Truffle Mash</p>
               </div>
-              <span className="text-white font-serif text-2xl">$42</span>
+              <span className="text-white font-serif text-2xl">$156</span>
             </div>
           </div>
           {/* Circular Text Animation could go here */}

@@ -88,7 +88,7 @@ const Contact = () => {
                 </div>
                 <div className="md:col-span-2 space-y-2 group">
                   <label className="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-bold ml-1 group-focus-within:text-primary transition-colors">Subject</label>
-                  <select className="w-full p-4 bg-white/5 border border-white/10 rounded-2xl text-white outline-none focus:border-primary/50 focus:bg-white/10 transition-all appearance-none">
+                  <select className="w-full p-4 bg-white/5 border border-white/10 rounded-2xl text-white outline-none focus:border-primary/50 focus:bg-white/10 transition-all appearance-none [color-scheme:dark] cursor-pointer">
                     <option className="bg-bg-main">General Inquiry</option>
                     <option className="bg-bg-main">Private Event</option>
                     <option className="bg-bg-main">Catering Services</option>
@@ -132,7 +132,7 @@ const Contact = () => {
             {[
               { q: "Do you offer valet parking?", a: "Yes, we provide complimentary valet parking for all our dinner guests." },
               { q: "Can I host a corporate event?", a: "Absolutely. We have a private lounge equipped for presentations and fine dining." },
-              { q: "Is there a dress code?", a: "We recommend smart casual to match the CafeNova atmosphere." }
+              { q: "Is there a dress code?", a: "We recommend smart casual to match the Cafe Bloom atmosphere." }
             ].map((faq, i) => (
               <div key={i} className="space-y-3">
                 <h4 className="text-white font-bold flex items-center gap-2">

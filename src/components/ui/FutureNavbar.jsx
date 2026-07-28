@@ -39,7 +39,7 @@ const Frame = ({
 /** 🎨 BUTTON VARIANTS & COLORS **/
 const COLORS = {
   default: {
-    stroke1: "#fbbf24", // Gold for CafeNova
+    stroke1: "#fbbf24", // Gold for Cafe Bloom
     fill1: "rgba(251, 191, 36, 0.22)",
     stroke2: "#fbbf24",
     fill2: "rgba(251, 191, 36, 0.1)",

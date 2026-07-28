@@ -1,21 +1,28 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { menuData } from "../data/menuData";
+import { menuData, mustTryDishes } from "../data/menuData";
 import GlassCard from "../components/ui/GlassCard";
 import { formatPrice } from "../utils/helpers";
-import { fadeIn, staggerContainer } from "../utils/animations";
+import { staggerContainer } from "../utils/animations";
 import { Search, Flame, Star, Utensils, Info } from "lucide-react";
+import AddToCartButton from "../components/ui/AddToCartButton";
 
 const Menu = () => {
   const [filter, setFilter] = useState("All");
   const [search, setSearch] = useState("");
 
-  const categories = ["All", ...new Set(menuData.map((item) => item.category))];
+  const categories = ["Must Try", "All", ...new Set(menuData.map((item) => item.category))];
 
-  const filteredMenu = menuData.filter(
-    (item) =>
-      (filter === "All" || item.category === filter) &&
-      item.name.toLowerCase().includes(search.toLowerCase())
+  // Pick the base list from the active tab, then narrow it by the search box.
+  const baseMenu =
+    filter === "Must Try"
+      ? mustTryDishes
+      : filter === "All"
+      ? menuData
+      : menuData.filter((item) => item.category === filter);
+
+  const filteredMenu = baseMenu.filter((item) =>
+    item.name.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
@@ -94,9 +101,9 @@ const Menu = () => {
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.4 }}
                 >
-                  <GlassCard className="group h-[540px] p-0 overflow-hidden flex flex-col border-white/5 hover:border-primary/20 transition-all duration-500">
+                  <GlassCard className="group h-[620px] p-0 overflow-hidden flex flex-col border-white/5 hover:border-primary/20 transition-all duration-500">
                     {/* Image Area */}
-                    <div className="relative h-1/2 overflow-hidden">
+                    <div className="relative h-[45%] shrink-0 overflow-hidden">
                       <img 
                         src={item.image} 
                         alt={item.name} 
@@ -140,14 +147,18 @@ const Menu = () => {
                         {item.description}
                       </p>
 
-                      {/* Nutritional info tag footer */}
-                      <div className="mt-auto flex items-center gap-4 border-t border-white/5 pt-6">
-                        <div className="flex items-center gap-1 text-slate-500 text-[10px] uppercase font-bold tracking-tighter">
-                          <Info size={12} className="text-primary" /> Freshly Prepared
+                      {/* Nutritional info tag footer + cart action */}
+                      <div className="mt-auto space-y-5">
+                        <div className="flex items-center gap-4 border-t border-white/5 pt-6">
+                          <div className="flex items-center gap-1 text-slate-500 text-[10px] uppercase font-bold tracking-tighter">
+                            <Info size={12} className="text-primary" /> Freshly Prepared
+                          </div>
+                          <div className="flex items-center gap-1 text-slate-500 text-[10px] uppercase font-bold tracking-tighter">
+                            <Utensils size={12} className="text-primary" /> Premium Quality
+                          </div>
                         </div>
-                        <div className="flex items-center gap-1 text-slate-500 text-[10px] uppercase font-bold tracking-tighter">
-                          <Utensils size={12} className="text-primary" /> Premium Quality
-                        </div>
+
+                        <AddToCartButton item={item} />
                       </div>
                     </div>
                   </GlassCard>
