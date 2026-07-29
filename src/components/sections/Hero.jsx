@@ -132,7 +132,7 @@ const Hero = () => {
                 <p className="text-white font-bold">Wild Glazed Salmon</p>
                 <p className="text-primary text-sm">Served with Truffle Mash</p>
               </div>
-              <span className="text-white font-serif text-2xl">{formatPrice(8908)}</span>
+              <span className="text-white font-serif text-2xl">{formatPrice(3500)}</span>
             </div>
           </div>
           {/* Circular Text Animation could go here */}
