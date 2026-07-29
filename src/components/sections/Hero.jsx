@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom"; // Assuming you use react-router
 import { fadeIn, staggerContainer } from "../../utils/animations";
 import { ArrowRight, MessageSquare, UtensilsCrossed, ChevronRight } from "lucide-react";
+import { formatPrice } from "../../utils/helpers";
 
 const HERO_IMAGES = [
   "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b", // Cocktail/Atmosphere
@@ -131,7 +132,7 @@ const Hero = () => {
                 <p className="text-white font-bold">Wild Glazed Salmon</p>
                 <p className="text-primary text-sm">Served with Truffle Mash</p>
               </div>
-              <span className="text-white font-serif text-2xl">$156</span>
+              <span className="text-white font-serif text-2xl">{formatPrice(8908)}</span>
             </div>
           </div>
           {/* Circular Text Animation could go here */}
