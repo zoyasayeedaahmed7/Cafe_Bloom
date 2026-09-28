@@ -12,7 +12,6 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Player } from "@lottiefiles/react-lottie-player";
-import Lottie from "lottie-react";
 import bookingAnimation from "../../assets/animations/booking.json";
 
 // Native <select> popups are painted by the OS, not by our CSS. The options
@@ -95,11 +94,11 @@ const ReservationForm = () => {
             <div className="w-[250px] h-[250px]">
               {lottieData && typeof lottieData === "object" && (
                 <Player
-  autoplay
-  loop
-  src={bookingAnimation}
-  style={{ height: "250px", width: "250px" }}
-/>
+                  autoplay
+                  loop
+                  src={lottieData}
+                  style={{ height: "250px", width: "250px" }}
+                />
               )}
             </div>
           </motion.div>
